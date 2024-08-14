@@ -5,46 +5,45 @@ import { ROUTES } from "../../constants/routes";
 
 const SideBar = () => {
   const location = useLocation();
-  const routes = ROUTES || {};
 
   return (
     <div className="side-bar-container">
       <ul className="side-bar-container__list">
         <li
           className={`side-bar-container__list-item ${
-            routes.ALL_TASK && routes.ALL_TASK.includes(location.pathname)
+            ROUTES.ALL_TASK && ROUTES.ALL_TASK.includes(location.pathname)
               ? "active"
               : ""
           }`}
         >
-          <Link to={routes.ALL_TASK || "#"}>All Task</Link>
+          <Link to={ROUTES.ALL_TASK || "#"}>All Task</Link>
         </li>
         <li
           className={`side-bar-container__list-item ${
-            routes.NEW_TASK && routes.NEW_TASK.includes(location.pathname)
+            ROUTES.NEW_TASK && ROUTES.NEW_TASK.includes(location.pathname)
               ? "active"
               : ""
           }`}
         >
-          <Link to={routes.NEW_TASK || "#"}>New Task</Link>
+          <Link to={ROUTES.NEW_TASK || "#"}>New Task</Link>
         </li>
         <li
           className={`side-bar-container__list-item ${
-            routes.DOING_TASK && routes.DOING_TASK.includes(location.pathname)
+            ROUTES.DOING_TASK && ROUTES.DOING_TASK.includes(location.pathname)
               ? "active"
               : ""
           }`}
         >
-          <Link to={routes.DOING_TASK || "#"}>Doing Task</Link>
+          <Link to={ROUTES.DOING_TASK || "#"}>Doing Task</Link>
         </li>
         <li
           className={`side-bar-container__list-item ${
-            routes.DONE_TASK && routes.DONE_TASK.includes(location.pathname)
+            ROUTES.DONE_TASK && ROUTES.DONE_NEW.includes(location.pathname)
               ? "active"
               : ""
           }`}
         >
-          <Link to={routes.DONE_TASK || "#"}>Done Task</Link>
+          <Link to={ROUTES.DONE_NEW || "#"}>Done Task</Link>
         </li>
       </ul>
     </div>
